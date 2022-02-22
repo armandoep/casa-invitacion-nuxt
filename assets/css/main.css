@@ -1,0 +1,177 @@
+
+/* ================
+    1. Color Variables
+=================== */
+:root {
+  /* 1.1 Neutral Color Variables */
+  --neutral-90: #1C2C33;
+  --neutral-80: #34444B;
+  --neutral-70: #4C5B62;
+  --neutral-60: #647379;
+  --nuetral-50: #7D8A90;
+  --neutral-40: #96A1A6;
+  --neutral-30: #96A1A6;
+  --neutral-20: #AFB8BC;
+  --neutral-10: #C9CFD2;
+  --neutral-00: #ffffff;
+
+  /* 1.2 Primary Color Variables */
+  --primary-90: #1d3845;
+  --primary-80: #2B505C;
+  --primary-70: #3B6971;
+  --primary-60: #4C8184;
+  --primary-50: #5F9695;
+  --primary-40: #7FAFB2;
+  --primary-30: #A1C5CB;
+  --primary-20: #C6DCE2;
+  --primary-10: #EDF4F7;
+
+  /* 1.3 Secondary Color Variables */
+  --secondary-90: #663B53;
+  --secondary-80: #8C5567;
+  --secondary-70: #B37279;
+  --secondary-60: #D99691;
+  --secondary-50: #FFC4B2;
+  --secondary-40: #FFD3BB;
+  --secondary-30: #FFE2C8;
+  --secondary-20: #FFEFD7;
+  --secondary-10: #FFF9E9;
+
+/* ================
+  2. Fonts Variables
+=================== */
+
+  /* 2.1 Font Families */
+  --fontFamilyMontserrat: 'Montserrat',
+      sans-serif;
+  --fontFamilyOvo: 'Ovo',
+      serif;
+  --fontFamilyPlayfair: 'Playfair Display',
+      serif;
+
+  /* 2.2 Font Sizes */
+  --fontSizeExtraSmall: 10px;
+  --fontSizeSmall: 14px;
+  --fontSizeMedium: 16px;
+  --fontSizeLarge: 24px;
+  --fontSizeXLarge: 32px;
+
+  --fontSizeHeaderExtraSmall: 24px;
+  --fontSizeHeaderSmall: calc(24px + (32 - 24) * ((100vw - 100px) / (2000 - 100)));
+  --fontSizeHeaderMedium: calc(24px + (40 - 24) * ((100vw - 100px) / (2000 - 100)));
+  --fontSizeHeaderLarge: calc(24px + (48 - 24) * ((100vw - 100px) / (2000 - 100)));
+  --fontSizeHeaderXLarge: calc(24px + (56 - 24) * ((100vw - 100px) / (2000 - 100)));
+  --fontSizeHeaderXXLarge: calc(24px + (64 - 24) * ((100vw - 100px) / (2000 - 100)));
+
+  --paragraphLineHeight: 40px;
+
+}
+
+/* ================
+  3. Document Formating
+=================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--fontFamilyPlayfair);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color:var(--neutral-00);
+
+  font-family: var(--fontFamilyMontserrat);
+}
+
+p{
+  font-size: var(--fontSizeMedium);
+  color: var(--primary-90);
+}
+
+a{
+  text-decoration: none;
+}
+button{
+  cursor: pointer;
+}
+.paragraphStyle{
+  line-height: var(--paragraphLineHeight)
+}
+.header2{
+  font-size: var(--fontSizeHeaderLarge);
+  color: var(--primary-60);
+  font-style: italic;
+}
+
+.primaryBtn {
+  font-size: var(--fontSizeMedium);
+  font-weight: 600;
+  color: var(--secondary-90);
+
+  background-color: var(--secondary-50);
+
+  border: 8px solid var(--neutral-00);
+  border-radius: 0;
+
+
+  display: inline-block;
+  padding: 14px 62px;
+}
+
+.secondaryBtn {
+  font-family: var(--fontFamilyPlayfair);
+  font-size: var(--fontSizeHeaderMedium);
+  font-weight: 600;
+  font-style: italic;
+  color: var(--neutral-00);
+
+  border: 8px solid var(--neutral-00);
+  border-radius: 0;
+  padding: 4px 16px;
+
+  background-color: var(--primary-90);
+}
+
+.tertiaryBtn {
+  font-family: var(--fontFamilyMontserrat);
+  font-weight: 600;
+  color: var(--secondary-90);
+  width: 195px;
+  height: 56px;
+
+  border: 1px solid var(--neutral-00);
+  border-radius: 0;
+
+  background-color: var(--secondary-50);
+
+  margin-top: 24px;
+
+}
+/* ================
+  4. Main Content Container
+=================== */
+.container {
+  width: 100%;
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
+
+
+@media screen and (max-width: 426px) {
+  body {
+      margin-bottom: 48px;
+  }
+}
