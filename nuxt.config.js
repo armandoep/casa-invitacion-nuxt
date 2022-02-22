@@ -45,20 +45,20 @@ export default {
 
   recaptcha: {
     language: "es",
-    siteKey: "6Le_TpAdAAAAANZbCzR1pCx2t0bLxbmlo5afdX8u",
+    siteKey: process.env.SITE_KEY,
     version: "v2"
   },
 
   mail: {
     message: {
-      to: 'edwin_perez2010@hotmail.es',
+      to: process.env.INFO_MAIL,
     },
     smtp: {
       host: "smtp.gmail.com",
       port: 587,
       auth: {
-        user: 'contacto.casainvitacion@gmail.com',
-        pass: 'yczfnilpatsxmvqz',
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASSWORD,
       },
     },
   },

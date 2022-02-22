@@ -93,6 +93,7 @@ Llamar?: ${this.email ? 'Si' : 'No'} \n
 `,
           })
         this.$toast.success('Mensaje enviado correctamente')
+        this.$toast.info('Te contactaremos lo mas pronto posible')
 
         this.name = ""
         this.email = ""
