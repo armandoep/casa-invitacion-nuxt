@@ -78,14 +78,21 @@ export default {
       try {
         const token = await this.$recaptcha.getResponse()
         if (token) {
-          console.log(this.name)
-          console.log(this.email)
-          console.log(this.phoneNumber)
-          console.log(this.date)
-          console.log(this.cardCode)
-          console.log(this.quantity)
-          console.log(this.description)
-          console.log(this.call)
+          await this.$mail.send({
+            from: 'Casa Invitacion',
+            subject: `Nuevo mensaje de ${this.name}`,
+            text: `Hola Jimena, has recibido un nuevo mensaje. \n
+Estos son los datos del cliente: \n
+Nombre: ${this.name} \n
+Correo: ${this.email} \n
+Numero de telefono: ${this.phoneNumber} \n
+Fecha: ${this.date} \n
+Descripcion: ${this.description} \n
+Llamar?: ${this.email ? 'Si' : 'No'} \n
+`,
+          })
+
+
         }
 
       } catch (error) {

@@ -33,6 +33,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/recaptcha',
+    'nuxt-mail',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -45,6 +46,20 @@ export default {
     language: "es",
     siteKey: "6Le_TpAdAAAAANZbCzR1pCx2t0bLxbmlo5afdX8u",
     version: "v2"
+  },
+
+  mail: {
+    message: {
+      to: 'edwin_perez2010@hotmail.es',
+    },
+    smtp: {
+      host: "smtp.gmail.com",
+      port: 587,
+      auth: {
+        user: 'contacto.casainvitacion@gmail.com',
+        pass: 'yczfnilpatsxmvqz',
+      },
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
