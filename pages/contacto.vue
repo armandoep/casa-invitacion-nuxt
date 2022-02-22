@@ -10,5 +10,10 @@
 <script>
 export default {
   name: 'ContactPage',
+  head() {
+    return {
+      title: 'Contacto'
+    }
+  }
 }
 </script>

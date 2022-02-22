@@ -78,6 +78,7 @@ export default {
       try {
         const token = await this.$recaptcha.getResponse()
         if (token) {
+          this.$toast.show('Enviando Mensaje')
           await this.$mail.send({
             from: 'Casa Invitacion',
             subject: `Nuevo mensaje de ${this.name}`,
@@ -91,12 +92,23 @@ Descripcion: ${this.description} \n
 Llamar?: ${this.email ? 'Si' : 'No'} \n
 `,
           })
+        this.$toast.success('Mensaje enviado correctamente')
 
+        this.name = ""
+        this.email = ""
+        this.phoneNumber = ""
+        this.date = ""
+        this.cardCode = ""
+        this.quantity = ""
+        this.description = ""
+        this.call = ""
 
+        await this.$recaptcha.reset()
         }
 
       } catch (error) {
         console.log(error)
+        this.$toast.error('Ha ocurrido un error, por favor asegurese de que todos los campos estan llenos')
       }
     }
   }

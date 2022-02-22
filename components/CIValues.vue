@@ -6,7 +6,7 @@
       <div class="valueThree"><img src="~/assets/img/ValueThree.jpg" alt=""></div>
       <h2 class="valueDetails">Love Details</h2>
       <div class="valueFour"><img src="~/assets/img/ValueFour.jpg" alt=""></div>
-      <a href="#" class="primaryBtn"> Cotiza Con Nosotros </a>
+      <a href="/contacto" class="primaryBtn"> Cotiza Con Nosotros </a>
     </section>
 </template>
 
