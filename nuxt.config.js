@@ -32,12 +32,19 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/recaptcha',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/',
+  },
+
+  recaptcha: {
+    language: "es",
+    siteKey: "6Le_TpAdAAAAANZbCzR1pCx2t0bLxbmlo5afdX8u",
+    version: "v2"
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

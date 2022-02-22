@@ -7,48 +7,48 @@
                 <h1 class="title-first">Cotiza con Nosotras</h1>
                 <p class="title-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit enim labore illo in, vitae quisquam dolore voluptates maiores repudiandae magni.</p>
             </div>
-            <form id="contact-form" name="contact-form" action="<?php echo admin_url( 'admin-post.php' ) ?>" method="post" class="contact-form">
+            <form id="contact-form" name="contact-form" @submit.prevent="sendMail" method="post" class="contact-form">
                 <div class="form-group item">
-                    <input type="text" name="name" id="name" placeholder=" " required>
+                    <input type="text" name="name" id="name" v-model="name" placeholder="" required>
                     <label for="name">Nombre</label>
                 </div>
 
                 <div class="form-group item">
-                    <input type="email" name="email" id="email" placeholder=" " required>
+                    <input type="email" name="email" id="email" v-model="email" placeholder=" " required>
                     <label for="email">Email</label>
                 </div>
 
                 <div class="form-group item">
-                    <input type="tel" name="phone-number" id="phone-number" placeholder=" " required>
+                    <input type="tel" name="phone-number" id="phone-number" v-model="phoneNumber" placeholder=" " required>
                     <label for="phone-number">Telefono</label>
                 </div>
 
                 <div class="form-group item">
-                    <input type="date" name="event-date" id="event-date" value="" required>
+                    <input type="date" name="event-date" id="event-date" v-model="date" required>
                     <label for="event-date">Fecha del Evento</label>
                 </div>
 
                 <div class="form-group item" style="display:none;">
-                    <input type="text" name="card-code" id="card-code" placeholder=" ">
+                    <input type="text" name="card-code" id="card-code" v-model="cardCode" placeholder=" ">
                     <label for="card-code">Codigo de Tarjeta</label>
                 </div>
 
                 <div class="form-group item" style="display:none;">
-                    <input type="text" name="quantity" id="quantity">
+                    <input type="text" name="quantity" id="quantity" v-model="quantity">
                     <label for="quantity">Cantidad</label>
                 </div>
 
                 <div class="form-group item-desc">
                     <label for="description">Cuentanos Más</label>
-                    <textarea type="text" name="description" id="description" required></textarea>
+                    <textarea type="text" name="description" id="description" v-model="description" required></textarea>
                 </div>
 
                 <div class="item-call">
-                    <label for="call-request"><input type="checkbox" name="call-request" id="call-request"> Deseas que te llamemos?</label>
+                    <label for="call-request"><input type="checkbox" name="call-request" id="call-request" v-model="call"> Deseas que te llamemos?</label>
                 </div>
                 <input type="hidden" name="action" value="process_form">
                 <div class="form-group">
-                    <div class="g-recaptcha" data-sitekey="6Le_TpAdAAAAANZbCzR1pCx2t0bLxbmlo5afdX8u"></div>
+                    <recaptcha />
                 </div>
                 <span style="display:none;" id="">Por favor chequee el captcha</span>
                 <button type="submit" class="primaryBtn" name="btn-submit" id="btn-submit">Solicitar</button>
@@ -61,7 +61,38 @@
 
 <script>
 export default {
+  data() {
+    return {
+      name: "",
+      email: "",
+      phoneNumber: "",
+      date: "",
+      cardCode: "",
+      quantity: "",
+      description: "",
+      call: "",
+    }
+  },
+  methods: {
+    async sendMail() {
+      try {
+        const token = await this.$recaptcha.getResponse()
+        if (token) {
+          console.log(this.name)
+          console.log(this.email)
+          console.log(this.phoneNumber)
+          console.log(this.date)
+          console.log(this.cardCode)
+          console.log(this.quantity)
+          console.log(this.description)
+          console.log(this.call)
+        }
 
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  }
 }
 </script>
 
